@@ -1,7 +1,7 @@
-eval "$(/opt/homebrew/bin/brew shellenv)"
 eval "$(sheldon source)"
 eval "$(starship init zsh)"
 {{ if eq .chezmoi.os "darwin" }}
+eval "$(/opt/homebrew/bin/brew shellenv)"
 eval "$(rtx activate zsh)"
 
 # Added by OrbStack: command-line tools and integration
