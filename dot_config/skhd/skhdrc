@@ -1,0 +1,78 @@
+###########################################################
+# Layout
+###########################################################
+
+alt - f : yabai -m space --layout float
+
+###########################################################
+# Window
+###########################################################
+
+# insert mode
+alt - i : yabai -m window --insert east
+alt + shift - i : yabai -m window --insert south
+
+# Applications
+alt - return : open -n /Applications/Alacritty.app
+alt + shift - n : open /Applications/Notion.app
+alt + shift - f : open -n ~
+
+
+# navigate
+alt - k : yabai -m window --focus stack.prev \
+    || yabai -m window --focus prev
+alt - j : yabai -m window --focus stack.next \
+    || yabai -m window --focus next
+alt - tab : yabai -m window --focus stack.recent \
+    || yabai -m window --focus recent
+
+# mirror
+alt - x : yabai -m space --mirror y-axis \
+    && yabai -m window --focus first
+
+# rotate
+alt - r : yabai -m space --rotate 270
+
+# warp
+alt + shift - w : yabai -m window --warp prev
+alt + shift - s : yabai -m window --warp next
+
+# full screen
+alt - space : yabai -m window --toggle zoom-fullscreen
+
+# resize
+alt + shift - a : yabai -m window --resize left:-40:0 \
+    || yabai -m window --resize right:-40:0
+alt + shift - d : yabai -m window --resize right:40:0 \
+    || yabai -m window --resize left:40:0
+
+###########################################################
+# Display
+###########################################################
+
+# navigate
+alt - 0x2B : yabai -m display --focus prev \
+    && yabai -m display --focus stack.prev
+alt - 0x2F : yabai -m display --focus next \
+    && yabai -m display --focus stack.next
+
+###########################################################
+# Space
+###########################################################
+
+# send window
+shift + alt - 0x2B : yabai -m window --display prev \
+    && yabai -m display --focus prev
+shift + alt - 0x2F : yabai -m window --display next \
+    && yabai -m display --focus next
+
+# toggle mission control
+shift + alt - m : yabai -m space --toggle mission-control
+
+# reset split balance
+shift + alt - e : yabai -m space --balance
+
+###########################################################
+# Stackline
+###########################################################
+# shift + alt - b : hs -c 'stackline.config:toggle("appearance.showIcons")'

@@ -1,0 +1,50 @@
+#!/usr/bin/env sh
+
+# global settings
+yabai -m config                                 \
+    mouse_follows_focus          on             \
+    focus_follows_mouse          autoraise      \
+    window_origin_display        default        \
+    window_placement             second_child   \
+    window_topmost               off            \
+    window_shadow                on             \
+    window_animation_duration    0.0            \
+    window_opacity_duration      0.0            \
+    active_window_opacity        1.0            \
+    normal_window_opacity        0.10           \
+    window_opacity               off            \
+    insert_feedback_color        0xffd75f5f     \
+    active_window_border_color   0xff775759     \
+    normal_window_border_color   0xff555555     \
+    window_border_width          4              \
+    window_border_radius         12             \
+    window_border_blur           off            \
+    window_border                off            \
+    split_ratio                  0.50           \
+    split_type                   auto           \
+    auto_balance                 off            \
+    top_padding                  06             \
+    bottom_padding               10             \
+    left_padding                 12             \
+    right_padding                12             \
+    window_gap                   06             \
+    layout                       bsp            \
+    mouse_modifier               ctrl           \
+    mouse_action1                move           \
+    mouse_action2                resize         \
+    mouse_drop_action            swap
+
+
+# Rules
+yabai -m rule --add                             \
+    app="Visual Studio Code"   opacity=0.7      \
+    app="^Calendar$"           manage=off       \
+    app="^Dictionary$"         manage=off       \
+    app="^Disk Utility$"       manage=off       \
+    app="^Postlab$"            manage=off       \
+    app="^Simulator$"          manage=off       \
+    app="^System Preferences$" manage=off       \
+    app="^Electron$"           manage=off       \
+
+
+echo "yabai configuration loaded..."
