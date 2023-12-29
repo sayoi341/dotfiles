@@ -1,0 +1,17 @@
+eval "$(/opt/homebrew/bin/brew shellenv)"
+eval "$(sheldon source)"
+eval "$(starship init zsh)"
+{{ if eq .chezmoi.os "darwin" }}
+eval "$(rtx activate zsh)"
+
+# Added by OrbStack: command-line tools and integration
+source ~/.orbstack/shell/init.zsh 2>/dev/null || :
+{{ end }}
+
+export XDG_CONFIG_HOME="$HOME/.config"
+
+bindkey -d
+bindkey ' ' zeno-auto-snippet
+bindkey '^x' zeno-insert-snippet
+bindkey '^r' zeno-history-selection
+bindkey '^i' zeno-completion

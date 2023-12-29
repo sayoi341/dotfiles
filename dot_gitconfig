@@ -1,0 +1,10 @@
+[user]
+	email = me@sayoi341.moe
+	name = sayoi341
+	signingkey = B83CA414160BC00F
+[commit]
+	gpgsign = true
+[gpg]
+	program = /opt/homebrew/bin/gpg
+[init]
+	defaultBranch = main
