@@ -5,24 +5,27 @@ tap "homebrew/services"
 tap "koekeishiya/formulae"
 
 brew "bat"
-brew "chezmoi"
-brew "cloudflared"
-brew "cocoapods"
 brew "eza"
 brew "fzf"
 brew "gh"
-brew "git"
-brew "gnupg"
-brew "hydra"
 brew "neofetch"
-brew "pinentry-mac"
-brew "rtx"
 brew "sheldon"
-brew "starship"
+brew "starship" 
 brew "tree"
-brew "skhd"
-brew "yabai"
-cask "alacritty"
+
+{{ if eq .chezmoi.os "darwin" }}
+
+brew "chezmoi" # macのみ
+brew "cloudflared" # macのみ
+brew "git" # macのみ
+brew "gnupg" # macのみ
+brew "hydra" # macのみ
+brew "pinentry-mac" # macのみ
+brew "rtx" # macのみ
+brew "skhd" # macのみ
+brew "yabai" # macのみ
+
+cask "alacritty" 
 cask "arc"
 cask "canva"
 cask "discord"
@@ -58,3 +61,5 @@ vscode "PKief.material-icon-theme"
 vscode "rust-lang.rust-analyzer"
 vscode "seatonjiang.gitmoji-vscode"
 vscode "tamasfe.even-better-toml"
+
+{{ end }}
