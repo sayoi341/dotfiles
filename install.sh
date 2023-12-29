@@ -31,7 +31,7 @@ exec "$chezmoi" "$@"
 
 # $REMOTE_CONTAINERSがtureの場合は以下のコマンドを実行する
 
-if [ "$REMOTE_CONTAINERS" = "true" ]; then
+if [ $REMOTE_CONTAINERS = true ]; then
     curl -sS https://starship.rs/install.sh | sh
     curl --proto '=https' -fLsS https://rossmacarthur.github.io/install/crate.sh \
         | bash -s -- --repo rossmacarthur/sheldon --to ~/.local/bin
