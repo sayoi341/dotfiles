@@ -1,12 +1,8 @@
-{{ if eq .chezmoi.os "darwin" }}
-
 tap "homebrew/bundle"
 tap "homebrew/cask-fonts"
 tap "homebrew/cask-versions"
 tap "homebrew/services"
 tap "koekeishiya/formulae"
-
-{{ end }}
 
 brew "bat"
 brew "eza"
@@ -16,8 +12,6 @@ brew "neofetch"
 brew "sheldon"
 brew "starship" 
 brew "tree"
-
-{{ if eq .chezmoi.os "darwin" }}
 
 brew "chezmoi" # macのみ
 brew "cloudflared" # macのみ
@@ -65,5 +59,3 @@ vscode "PKief.material-icon-theme"
 vscode "rust-lang.rust-analyzer"
 vscode "seatonjiang.gitmoji-vscode"
 vscode "tamasfe.even-better-toml"
-
-{{ end }}
