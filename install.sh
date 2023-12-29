@@ -28,11 +28,3 @@ set -- init --apply --source="${script_dir}"
 echo "Running 'chezmoi $*'" >&2
 # exec: replace current process with chezmoi
 exec "$chezmoi" "$@"
-
-# $REMOTE_CONTAINERSがtureの場合は以下のコマンドを実行する
-
-if [ $REMOTE_CONTAINERS = true ]; then
-    curl -sS https://starship.rs/install.sh | sh
-    curl --proto '=https' -fLsS https://rossmacarthur.github.io/install/crate.sh \
-        | bash -s -- --repo rossmacarthur/sheldon --to ~/.local/bin
-fi
