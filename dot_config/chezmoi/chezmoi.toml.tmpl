@@ -1,8 +1,0 @@
-{{ if eq .chezmoi.os "darwin" }}
-sourceDir = "/Users/sayoi/.dotfiles"
-
-[edit]
-command = "code"
-{{ else if eq .chezmoi.os "linux" }}
-sourceDir = "/root/dotfiles"
-{{ end }}

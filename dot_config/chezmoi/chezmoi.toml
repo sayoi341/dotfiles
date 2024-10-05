@@ -1,0 +1,5 @@
+
+sourceDir = "/Users/sayoi/.dotfiles"
+
+[edit]
+  command = "code"
