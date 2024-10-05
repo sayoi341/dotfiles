@@ -1,7 +1,4 @@
 README.md
 LICENSE
-install.sh
 
-{{- if eq (env "REMOTE_CONTAINERS") "true" }}
-/.gitconfig
-{{- end }}
+.gitconfig
