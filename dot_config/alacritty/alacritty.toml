@@ -1,46 +1,68 @@
 [window]
-padding = { x = 12, y = 24 }
-decorations = "transparent"
-title = "Terminal"
-opacity = 0.75
+  decorations = "transparent"
+  opacity     = 0.75
+  padding     = { x = 12, y = 24 }
+  title       = "Terminal"
+
+[scrolling]
 
 [font]
-normal = { family = "JetBrainsMono Nerd Font", style = "Regular" }
-bold = { family = "JetBrainsMono Nerd Font", style = "Bold" }
-italic = { family = "JetBrainsMono Nerd Font", style = "Italic" }
-bold_italic = { family = "JetBrainsMono Nerd Font", style = "Bold Italic" }
-size = 13
-offset = { x = 1, y = 1 }
+  bold        = { family = "JetBrainsMono Nerd Font", style = "Bold" }
+  bold_italic = { family = "JetBrainsMono Nerd Font", style = "Bold Italic" }
+  italic      = { family = "JetBrainsMono Nerd Font", style = "Italic" }
+  normal      = { family = "JetBrainsMono Nerd Font", style = "Regular" }
+  offset      = { x = 1, y = 1 }
+  size        = 13
 
 [colors]
-cursor = { text = "0x1E355B", cursor = "0x1E355B" }
 
 [colors.primary]
-background = "0xFFFFFF"
-foreground = "0x1E355B"
+  background = "#FFFFFF"
+  foreground = "#1E355B"
 
 [colors.normal]
-black = "0x333642"
-red = "0xAC7AE8"
-green = "0x3AF14D"
-yellow = "0xC6C641"
-blue = "0xAC7AE8"
-magenta = "0xE859A4"
-cyan = "0x7AB8CC"
-white = "0xC9C9B8"
+  black   = "#333642"
+  blue    = "#AC7AE8"
+  cyan    = "#7AB8CC"
+  green   = "#3AF14D"
+  magenta = "#E859A4"
+  red     = "#AC7AE8"
+  white   = "#C9C9B8"
+  yellow  = "#C6C641"
 
 [colors.bright]
-black = "0x545A6F"
-red = "0xE07B7B"
-green = "0x72FFA3"
-yellow = "0xFFFFAA"
-blue = "0xAA7DE1"
-magenta = "0xE87CAE"
-cyan = "0x8ED0E2"
-white = "0xFFFFFF"
+  black   = "#333642"
+  blue    = "#AC7AE8"
+  cyan    = "#7AB8CC"
+  green   = "#3AF14D"
+  magenta = "#E859A4"
+  red     = "#AC7AE8"
+  white   = "#C9C9B8"
+  yellow  = "#C6C641"
+
+[colors.dim]
+  black   = "#333642"
+  blue    = "#AC7AE8"
+  cyan    = "#7AB8CC"
+  green   = "#3AF14D"
+  magenta = "#E859A4"
+  red     = "#AC7AE8"
+  white   = "#C9C9B8"
+  yellow  = "#C6C641"
+
+[bell]
+
+[selection]
 
 [cursor]
-style = { shape = "Beam", blinking = "On" }
+  style = { shape = "Beam", blinking = "On" }
+
+[terminal]
 
 [mouse]
-hide_when_typing = true
+  bindings         = [{ mouse = "Right", mods = "Control", action = "Paste" }]
+  hide_when_typing = true
+
+[hints]
+
+[keyboard]
