@@ -2,17 +2,21 @@
 "$schema" = 'https://starship.rs/config-schema.json'
 
 format = """
-$os $hostname$username in $directory at $localip $cmd_duration
-$git_branch $git_status $c$cmake$dart$deno$golang$nodejs$python$rust$typst$line_break\
+$os $hostname$username in $directory $cmd_duration\
+$git_branch$git_status $c$dart$deno$golang$nodejs$python$rust$typst$line_break\
 $shlvl$character"""
 
 [bun]
+  format = "via [$symbol ($version)]($style)"
+  style  = "bold red"
+  symbol = "🍞"
 
 [c]
+  format = "via [$symbol ($version(-$name))]($style)"
+  style  = "bold blue"
+  symbol = "\ue61e"                                   # 
 
 [character]
-
-[cmake]
 
 [cmd_duration]
   format             = "[󰔛 $duration]($style) "
@@ -20,43 +24,54 @@ $shlvl$character"""
   style              = "yellow bold"
 
 [dart]
+  format = "via [$symbol ($version)]($style)"
+  style  = "bold blue"
+  symbol = "\ue64c"                           # 
 
 [deno]
+  format = "via [$symbol ($version)]($style)"
+  style  = "green bold"
+  symbol = "🦕"
 
 [directory]
   format = "[\ueaf7 $path]($style)"
+  style  = "italic fg:cyan"
 
 [git_branch]
-  format = "on [$symbol $branch]($style)"
-  style  = "bold purple"
-  symbol = "\ue725"
+  format            = "on [$symbol $branch]($style)"
+  style             = "bold purple"
+  symbol            = "\ue725"
+  truncation_length = 11
 
 [git_status]
-  ahead      = "[\ueaa1](green)"
-  behind     = "[\uec1d](blue)"
-  conflicted = "[ 󱃟  $count ](red)"
-  deleted    = "[ \uee23 $count ](purple)"
-  diverged   = "[\uf09f](purple)"
-  format     = '[$ahead_behind $all_status]($style)'
-  modified   = "[ \uec0c $count ](yellow)"
-  renamed    = "[  $count ](bright-blue)"
-  staged     = "[ \uec0b $count ](green)"
-  stashed    = "[   $count ](yellow)"
-  untracked  = "[ 󱝾  $count ](red)"
-  up_to_date = "[\ueab2](green)"
+  ahead      = "[\uf0ee](green)"                    # 
+  behind     = "[\uf0ed](blue)"                     # 
+  conflicted = "[ 😵$count](red)"
+  deleted    = "[ 🔥$count](red)"
+  diverged   = "[\uf09f](purple)"                   # 
+  format     = '[$ahead_behind$all_status]($style)'
+  modified   = "[ ✨$count](yellow bg:gray)"
+  renamed    = "[ 📛$count](bright-blue)"
+  staged     = "[ 🛠️$count](green)"
+  stashed    = "[ 📦$count](yellow)"
+  untracked  = "[ 👀$count](red)"
+  up_to_date = "[\ueab2](green)"                    # 
 
 [hostname]
   format   = "[$hostname]($style)"
   ssh_only = false
   style    = "bold black"
 
-[localip]
-  disabled = false
-  format   = "[\uee47 $localipv4]($style)"
-  ssh_only = false
-  style    = "yellow bold"
+  #[localip]
+  #  disabled = false
+  #  format   = "[\uee47 $localipv4]($style)"
+  #  ssh_only = false
+  #  style    = "yellow bold"
 
 [nodejs]
+  format = "via [$symbol ($version)]($style)"
+  style  = "green bold"
+  symbol = "\ued0d"                           #
 
 [os]
   disabled = false
@@ -66,6 +81,9 @@ $shlvl$character"""
   Macos = ""
 
 [python]
+  detect_files  = [".python-version", "Pipfile", "__init__.py", "pyproject.toml", "requirements.txt", "setup.py", "tox.ini"]
+  format        = "via [\ue606 $venv $version](bold yellow) "                                                                # 
+  python_binary = ['./venv/bin/python', 'python', 'python2', 'python3']
 
 [shlvl]
   disabled      = false
@@ -77,6 +95,9 @@ $shlvl$character"""
   threshold     = 0
 
 [typst]
+  format = "via [$symbol ($version)]($style)"
+  style  = "bold blue"
+  symbol = "📝"
 
 [username]
   disabled = false
