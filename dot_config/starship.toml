@@ -1,0 +1,82 @@
+# Get editor completions based on the config schema
+"$schema" = 'https://starship.rs/config-schema.json'
+
+format = """
+$os $hostname$username in $directory at $localip $cmd_duration
+$git_branch $git_status $c$cmake$dart$deno$golang$nodejs$python$rust$typst$line_break\
+$shlvl$character"""
+
+[bun]
+
+[c]
+
+[character]
+
+[cmake]
+
+[cmd_duration]
+  format             = "[󰔛 $duration]($style) "
+  show_notifications = true
+  style              = "yellow bold"
+
+[dart]
+
+[deno]
+
+[directory]
+  format = "[\ueaf7 $path]($style)"
+
+[git_branch]
+  format = "on [$symbol $branch]($style)"
+  style  = "bold purple"
+  symbol = "\ue725"
+
+[git_status]
+  ahead      = "[\ueaa1](green)"
+  behind     = "[\uec1d](blue)"
+  conflicted = "[ 󱃟  $count ](red)"
+  deleted    = "[ \uee23 $count ](purple)"
+  diverged   = "[\uf09f](purple)"
+  format     = '[$ahead_behind $all_status]($style)'
+  modified   = "[ \uec0c $count ](yellow)"
+  renamed    = "[  $count ](bright-blue)"
+  staged     = "[ \uec0b $count ](green)"
+  stashed    = "[   $count ](yellow)"
+  untracked  = "[ 󱝾  $count ](red)"
+  up_to_date = "[\ueab2](green)"
+
+[hostname]
+  format   = "[$hostname]($style)"
+  ssh_only = false
+  style    = "bold black"
+
+[localip]
+  disabled = false
+  format   = "[\uee47 $localipv4]($style)"
+  ssh_only = false
+  style    = "yellow bold"
+
+[nodejs]
+
+[os]
+  disabled = false
+  style    = "bold black"
+
+[os.symbols]
+  Macos = ""
+
+[python]
+
+[shlvl]
+  disabled      = false
+  format        = '[$symbol]($style)'
+  repeat        = true
+  repeat_offset = 1
+  style         = 'bold green'
+  symbol        = '❯'
+  threshold     = 0
+
+[typst]
+
+[username]
+  disabled = false
