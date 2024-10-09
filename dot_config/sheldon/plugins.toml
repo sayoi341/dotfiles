@@ -4,20 +4,21 @@ shell = "zsh"
 
 # 遅延読み込み
 [plugins.zsh-defer]
+  apply  = ["source"]
   github = "romkatv/zsh-defer"
 
-# 履歴補完
-[plugins.zsh-autosuggestions]
-  apply  = ["defer"]
-  github = "zsh-users/zsh-autosuggestions"
+# compinitを実行
+[plugins.compinit]
+  inline = 'autoload -Uz compinit && zsh-defer compinit'
 
 # 補完
-[plugins.zsh-completions]
+[plugins.zsh-autocomplete]
   apply  = ["defer"]
-  github = "zsh-users/zsh-completions"
+  github = "marlonrichert/zsh-autocomplete"
 
 # ハイライト
 [plugins.zsh-syntax-highlighting]
+  apply  = ["source"]
   github = "zsh-users/zsh-syntax-highlighting"
 
 # 構文ハイライト
@@ -25,4 +26,10 @@ shell = "zsh"
   github = "zdharma/fast-syntax-highlighting"
 
 [templates]
-  defer = "{% for file in files %}zsh-defer source \"{{ file }}\"\n{% endfor %}"
+  PATH = 'export PATH="{{ dir }}:$PATH"' # パスに追加 
+  defer = "{% for file in files %}zsh-defer source \"{{ file }}\"\n{% endfor %}" # 遅延s
+  fpath = 'fpath=( "{{ dir }}" $fpath )' # fpathに追加
+  path = 'path=( "{{ dir }}" $path )' # pathに追加
+  source = '''
+{{ hooks?.pre | nl }}{% for file in files %}source "{{ file }}"
+{% endfor %}{{ hooks?.post | nl }}'''
