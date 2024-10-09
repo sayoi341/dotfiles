@@ -3,7 +3,7 @@
 
 format = """
 $os $hostname$username in $directory $cmd_duration\
-$git_branch$git_status $c$dart$deno$golang$nodejs$python$rust$typst$line_break\
+$git_branch $git_status $c$dart$deno$golang$nodejs$python$rust$typst$line_break\
 $shlvl$character"""
 
 [bun]
